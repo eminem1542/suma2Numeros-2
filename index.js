@@ -4,7 +4,7 @@ const morgan=require('morgan');
 const cors = require('cors'); // Importa el paquete cors   npm install cors
  
 //Configuraciones  servidor
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 4000);
 app.set('json spaces', 2)
  
 //Middleware
