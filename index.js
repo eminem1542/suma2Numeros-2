@@ -24,7 +24,22 @@ app.get('/', (req, res) => {
 })
 
 
+// Endpoint para sumar dos números
+app.post('/sumar', (req, res) => { // http://localhost/sumar
+  const { num1, num2 } = req.body;// se declaran los datos de entrada
 
+  // Validar que se hayan enviado los dos números  que no esten vacio
+  if (!num1 || !num2) {
+    return res.status(400).send({ error: 'Faltan números para sumar' });
+  }
+
+  // Sumar los números
+  const resultado = num1 + num2;
+
+  // Enviar el resultado
+
+  res.send({ resultado });
+});
 
 //Iniciando el servidor
 app.listen(app.get('port'),()=>{
