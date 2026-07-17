@@ -34,7 +34,71 @@ app.post('/sumar', (req, res) => { // http://localhost/sumar
   }
 
   // Sumar los números
-  const resultado = num1 + num2;
+  const resultado = num1+num2;
+
+  // Enviar el resultado
+
+  res.send({ resultado });
+});
+
+app.post('/restar', (req, res) => { // http://localhost/sumar
+  const { num1, num2 } = req.body;// se declaran los datos de entrada
+
+  // Validar que se hayan enviado los dos números  que no esten vacio
+  if (!num1 || !num2) {
+    return res.status(400).send({ error: 'Faltan números para sumar' });
+  }
+
+  // resta los números
+  const resultado = num1-num2;
+
+  // Enviar el resultado
+
+  res.send({ resultado });
+});
+
+app.post('/multiplicar', (req, res) => { // http://localhost/sumar
+  const { num1, num2 } = req.body;// se declaran los datos de entrada
+
+  // Validar que se hayan enviado los dos números  que no esten vacio
+  if (!num1 || !num2) {
+    return res.status(400).send({ error: 'Faltan números para sumar' });
+  }
+
+  // Sumar los números
+  const resultado = num1   *  num2;
+
+  // Enviar el resultado
+
+  res.send({ resultado });
+});
+
+app.post('/dividir', (req, res) => { // http://localhost/sumar
+  const { num1, num2 } = req.body;// se declaran los datos de entrada
+
+  // Validar que se hayan enviado los dos números  que no esten vacio
+  if (!num1 || !num2) {
+    return res.status(400).send({ error: 'Faltan números para sumar' });
+  }
+
+  // divide los números
+  const resultado = num1/num2;
+
+  // Enviar el resultado
+
+  res.send({ resultado });
+});
+
+
+//area de figuras
+
+app.post('/cuadrado', (req, res) => { // http://localhost/sumar
+  const { base, altura } = req.body;// se declaran los datos de entrada
+
+   
+
+  // Area del cuadrado  base por altura
+  const resultado = base*altura;
 
   // Enviar el resultado
 
